@@ -17,6 +17,5 @@ jobs:
         run: npm install -g @prantlf/jsonlint
 
       - name: Run JSON Linter
-        run: |
-  jsonlint $GITHUB_WORKSPACE/JSON_DetailedDataSchema_Example.json
+        run: |  jsonlint $GITHUB_WORKSPACE/JSON_DetailedDataSchema_Example.json
 
