@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "User Data Schema",
+  "description": "Schema for user data",
+  "type": "object",
+  "properties": {
+    "Користувач": {
+      "description": "Інформація про користувача системи",
+      "type": "object",
+      "properties": {
+        "ім'я": {
+          "description": "Ім'я користувача",
+          "type": "integer",  // Ошибка: неверный тип, должен быть "string"
+          "minLength": 1
+        },
+        "прізвище": {
+          "description": "Прізвище користувача",
+          "type": "string",
+          "minLength": 1
+        },
+        "email": {
+          "description": "Електронна адреса користувача",
+          "type": "string",
+          "format": "email"
+        },
+        "бібліотека": {
+          "description": "Інформація про бібліотеку користувача",
+          "type": "object",
+          "properties": {
+            "кількість_матеріалів": {
+              "description": "Кількість матеріалів у бібліотеці",
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100
+            }
+          }
+          // Ошибка: удалено "required": ["кількість_матеріалів"]
+        }
+        // Другие свойства без изменений
+      },
+      "required": ["ім'я", "прізвище", "email", "галерея_стимулів", "візуальні_стимули", "прогрес", "сертифікати", "відеоуроки"]
+      // Ошибка: удалено "бібліотека" из списка "required"
+    }
+  }
+}
