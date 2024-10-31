@@ -3,7 +3,7 @@ name: Data Schema Code Convention
 on:
   push:
     branches:
-      - main  # Замените на нужную ветку, если необходимо
+      - main  
 
 jobs:
   json_linter_test:
@@ -17,4 +17,6 @@ jobs:
         run: npm install -g @prantlf/jsonlint
 
       - name: Run JSON Linter
-        run: jsonlint $GITHUB_WORKSPACE/Create JSON_DetailedDataSchema_Example.json
+        run: |
+  jsonlint $GITHUB_WORKSPACE/JSON_DetailedDataSchema_Example.json
+
