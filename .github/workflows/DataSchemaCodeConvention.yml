@@ -1,0 +1,20 @@
+name: Data Schema Code Convention
+
+on:
+  push:
+    branches:
+      - main  # Замените на нужную ветку, если необходимо
+
+jobs:
+  json_linter_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install JSON Linter
+        run: npm install -g @prantlf/jsonlint
+
+      - name: Run JSON Linter
+        run: jsonlint $GITHUB_WORKSPACE/Create JSON_DetailedDataSchema_Example.json
